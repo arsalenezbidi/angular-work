@@ -9,7 +9,7 @@ import { Client } from 'src/app/shared/client';
 })
 export class LoginComponent implements OnInit {
    
-  client=new Client (0,"","","","",null);
+  client=new Client ;
 
   
   constructor(
