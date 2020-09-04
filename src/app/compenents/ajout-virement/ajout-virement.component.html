@@ -1,0 +1,123 @@
+<head>
+    <style>
+        h1 {text-align: center;}
+        p {text-align: center;}
+        div {text-align: center;}
+       
+        .block {
+ 
+            width: 20%;
+            background-color: #6BC697;
+            color:white;
+        }
+        
+
+
+
+
+    </style>
+
+</head>
+<body>
+  <div class="container">
+
+    <br><br>
+    <h2>Ajout de virement</h2>
+    <br>
+<form>
+    <div class="form-group row">
+      <label for="NomClient" class="col-sm-2 col-form-label">Client:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="NomClient"  >
+      </div>
+    </div>
+   
+      <div class="form-group row">
+        <label for="Compte-a-debite" class="col-sm-2 col-form-label">Compte à Débiter:</label>
+        <div class="col-sm-10">
+            <select class="form-control" id="Compte-a-debite" required>
+              
+                <ul>
+                  <li *ngFor="let client of Client"></li>
+              </ul>
+               
+              </select>
+        </div>
+      
+      </div>
+    <fieldset class="form-group">
+      <div class="row">
+        <legend class="col-form-label col-sm-2 pt-0" for="compte-a-crediter">Compte a Créditer:
+        </legend>
+        <div class="col-sm-10">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gridRadios" id="1DesCompteClient" value="un de compte client" checked>
+            <label class="form-check-label" for="1DesCompteClient">
+                Un de vos Comptes 
+            </label>
+          </div>
+          <div class="form-check disabled">
+            <input class="form-check-input" type="radio" name="gridRadios" id="CompteBeneficaire" value="CompteBeneficaire">
+            <label class="form-check-label" for="CompteBeneficaire">
+              Compte Bénéficaire 
+            </label>
+          </div>
+         
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-10">
+            <select class="form-control" id="compte-a-crediter" required>
+              <ul>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              
+            </ul>
+              </select>
+          </div>
+      </div>
+    </fieldset>
+    <div class="form-group row">
+        <label for="Montant" class="col-sm-2 col-form-label">Montant:</label>
+        <div class="col-sm-4">
+            <input type="number" id="Montant" name="Montant"  placeholder="Montant"
+            min="10" max="10000" required>
+        </div>
+        <div class="col">
+            <label for="Montant">TND</label>
+        </div>
+      </div>
+    
+      <div class="form-group row">
+        <label for="DateDeVairment" class="col-sm-2 col-form-label"> Date De Vairment:</label>
+        <div class="col-sm-10">
+            <input type="date" id="DateDeVairment" name="DateDeVairment" required>
+    <span class="validity"></span>
+        </div>
+        
+      </div> 
+      <div class="form-group row">
+        <label for="Motif" class="col-sm-2 col-form-label">Motif:</label>
+        <div class="col-sm-10">
+            <select class="form-control" id="Motif" required>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+        </div>
+      </div>
+    
+
+
+
+    <div class="form-group row">
+      <div class="col-sm-12">
+        <button type="submit" class="   btn btn-primary block" id="valider" size="15" (click)="nextpage()" >Valider</button>
+      </div>
+    </div>
+  </form>
+</div>
